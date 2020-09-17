@@ -63,7 +63,7 @@ def returnNewPoints(old_points):
         new_points.append(intermediate_point)
     return new_points
 
-def returnPointsUptToN(n):
+def returnPointsUpToN(n):
     """returns the points of approximation polygons up to order n.
 
     Arguments:
