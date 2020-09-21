@@ -7,6 +7,9 @@ import math
 from matplotlib import pyplot as plt
 import numpy as np
 
+# Avoid automatic display of the figures
+plt.ioff()
+
 #Initial values for the sides and the points
 delta_0 = math.sqrt(2.)
 # The format for the points is [(x_1,y_1),(x_2,y_2),....]
@@ -101,3 +104,5 @@ def plotTheApproximationPolygon(points):
 
     ax.fill(x_circle,y_circle,fill=False,zorder=1)
     ax.fill(x, y,zorder=2)
+
+    return fig

@@ -16,7 +16,7 @@ def returnArchimedesWidget(maxN):
     values_of_pi = returnPiUpToN(maxN)
 
     def plot_approximation(n):
-        plotTheApproximationPolygon(points[n])
+        display( plotTheApproximationPolygon(points[n]) )
 
     def return_piapproximation(n):
         htmlString = '<h3>The approximate value of pi is {}</h3>'.format(values_of_pi[n])
