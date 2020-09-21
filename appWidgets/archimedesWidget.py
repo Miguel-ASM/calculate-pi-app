@@ -19,7 +19,13 @@ def returnArchimedesWidget(maxN):
         display( plotTheApproximationPolygon(points[n]) )
 
     def return_piapproximation(n):
-        htmlString = '<h3>The approximate value of pi is {}</h3>'.format(values_of_pi[n])
+        html_message_template ="""<div class="jumbotron">
+        <h3>
+        π ≈ {pi_value:.8f}
+        </h3>
+        </div>
+        """
+        htmlString = html_message_template.format(pi_value = values_of_pi[n])
         display(ipw.HTML(htmlString))
 
     slider = ipw.IntSlider(
@@ -32,14 +38,16 @@ def returnArchimedesWidget(maxN):
     circle = ipw.interactive_output(plot_approximation, {'n':slider})
     pivalue_widget = ipw.interactive_output(return_piapproximation, {'n':slider})
 
-    return ipw.VBox(
+    return ipw.HBox(
         children= [
-            slider,
-            ipw.HBox(
+            circle,
+            ipw.VBox(
                 children = [
-                    circle,
+                    slider,
                     pivalue_widget
-                ]
+                ],
+                layout = ipw.Layout(align_items = 'flex-end')
             )
-        ]
+        ],
+        layout = ipw.Layout(justify_content = 'center')
     )
