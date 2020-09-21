@@ -7,8 +7,11 @@
 
 import random
 # import math
-# from matplotlib import pyplot as plt
-# import numpy as np
+from matplotlib import pyplot as plt
+import numpy as np
+
+# Avoid automatic display of the figures
+plt.ioff()
 
 def pointIsInside(x,y):
     """pointIsInside
@@ -67,3 +70,33 @@ class MontecarloApprox:
             if pointIsInside(x, y):
                 self.points_inside += 1
         self.updatePi()
+
+def plotTheMonteCarloExperiment(points):
+    """plots the positions of the pebbles in the Montecarlo experiment
+
+    Arguments:
+    points -- the list of the points of the positions
+    """
+
+    # Create a figure
+    fig,ax = plt.subplots(constrained_layout=True,figsize=(8,8))
+
+    ax.set_aspect(1.)
+    ax.set_xlim(-1.1,1.1)
+    ax.set_ylim(-1.1,1.1)
+
+    rho_circle = np.linspace(0, 2 * np.pi,100)
+    r_circle = np.ones(np.shape(rho_circle))
+
+    x_circle = r_circle * np.cos(rho_circle)
+    y_circle = r_circle * np.sin(rho_circle)
+
+    ax.fill(x_circle,y_circle,fill=False,zorder=1)
+
+    # First the points have to be unpacked in a x and y values
+
+    if points:
+        x, y = zip(*points)
+        ax.scatter(x,y)
+
+    return fig
