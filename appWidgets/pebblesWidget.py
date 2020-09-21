@@ -81,5 +81,5 @@ def returnPebblessWidget():
                 ]
             )
         ],
-        layout = ipw.Layout(align_items = 'flex-end')
+        layout = ipw.Layout(justify_content = 'center')
     )
