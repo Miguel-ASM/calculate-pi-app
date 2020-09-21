@@ -69,7 +69,7 @@ class MontecarloApprox:
             self.points_total += 1
             if pointIsInside(x, y):
                 self.points_inside += 1
-        self.updatePi()
+            self.updatePi()
 
 def plotTheMonteCarloExperiment(points):
     """plots the positions of the pebbles in the Montecarlo experiment
