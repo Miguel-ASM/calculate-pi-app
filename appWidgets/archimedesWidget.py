@@ -34,7 +34,12 @@ def returnArchimedesWidget(maxN):
 
     return ipw.VBox(
         children= [
-            ipw.HBox(children=[slider,pivalue_widget]),
-            circle
+            slider,
+            ipw.HBox(
+                children = [
+                    circle,
+                    pivalue_widget
+                ]
+            )
         ]
     )
