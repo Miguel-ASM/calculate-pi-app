@@ -46,8 +46,8 @@ def returnArchimedesWidget(maxN):
                     slider,
                     pivalue_widget
                 ],
-                layout = ipw.Layout(align_items = 'flex-end')
+                layout = ipw.Layout(align_items = 'center')
             )
         ],
-        layout = ipw.Layout(justify_content = 'center')
+        layout = ipw.Layout(justify_content = 'center',align_items = 'center')
     )

@@ -92,6 +92,21 @@ def plotTheApproximationPolygon(points):
     # Create a figure
     fig,ax = plt.subplots(constrained_layout=True,figsize=(8,8))
 
+    #
+    ax.set_facecolor('lightgreen')
+
+    # Deactivate axis ticks
+    ax.tick_params(
+        axis='both',       # changes apply to the x,y-axis
+        which='both',      # both major and minor ticks are affected
+        bottom=False,      # ticks along the bottom edge are off
+        top=False,         # ticks along the top edge are off
+        right = False,
+        left = False,
+        labelbottom=False,
+        labelleft=False) # labels along the bottom edge are off
+
+    # set limits for the axis and aspect ratio
     ax.set_aspect(1.)
     ax.set_xlim(-1.1,1.1)
     ax.set_ylim(-1.1,1.1)
@@ -102,7 +117,7 @@ def plotTheApproximationPolygon(points):
     x_circle = r_circle * np.cos(rho_circle)
     y_circle = r_circle * np.sin(rho_circle)
 
-    ax.fill(x_circle,y_circle,fill=False,zorder=1)
-    ax.fill(x, y,zorder=2)
+    ax.fill(x_circle,y_circle,fill=False,zorder=1,linewidth=3)
+    ax.fill(x, y,zorder=2,facecolor='lightblue',edgecolor='blue',linewidth=3)
 
     return fig
