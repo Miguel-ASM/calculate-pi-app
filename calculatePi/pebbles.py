@@ -96,8 +96,8 @@ def plotTheMonteCarloExperiment(points):
         labelleft=False) # labels along the bottom edge are off
 
     ax.set_aspect(1.)
-    ax.set_xlim(-1.1,1.1)
-    ax.set_ylim(-1.1,1.1)
+    ax.set_xlim(-1.01,1.01)
+    ax.set_ylim(-1.01,1.01)
 
     rho_circle = np.linspace(0, 2 * np.pi,100)
     r_circle = np.ones(np.shape(rho_circle))
